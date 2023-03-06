@@ -6,9 +6,11 @@ import { router } from "./routes";
 
 import swaggerFile from "../../../swagger.json";
 
-import "../typeorm-db/index";
+import createConnection from "../typeorm-db/index";
 import "../../container";
 import { AppError } from "../../errors/AppError";
+
+createConnection();
 
 const app = express();
 
