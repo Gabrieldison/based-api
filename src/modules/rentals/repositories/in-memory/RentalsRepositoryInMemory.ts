@@ -1,6 +1,7 @@
 import { ICreateRentalDTO } from "../../dtos/ICreateRentalDTO";
 import { Rental } from "../../infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "../IRentalsRepository";
+import dayjs from "dayjs";
 
 class RentalsRepositoryInMemory implements IRentalsRepository {
   rentals: Rental[] = [];
