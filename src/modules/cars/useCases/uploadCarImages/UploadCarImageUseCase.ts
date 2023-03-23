@@ -4,7 +4,7 @@ import { ICarsImageRepository } from "../../repositories/ICarsImageRepository";
 
 interface IRequest {
   car_id: string;
-  name_image: string[];
+  images_name: string[];
 }
 
 @injectable()
@@ -17,8 +17,8 @@ class UploadCarsImageUseCase {
     private storageProvider: IStorageProvider
   ) {}
 
-  async execute({ car_id, name_image }: IRequest): Promise<void> {
-    name_image.map(async (image) => {
+  async execute({ car_id, images_name }: IRequest): Promise<void> {
+    images_name.map(async (image) => {
       await this.carsImagesRepository.create(car_id, image);
       await this.storageProvider.save(image, "cars");
     });

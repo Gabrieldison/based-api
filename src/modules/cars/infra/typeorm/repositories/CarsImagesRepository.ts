@@ -9,10 +9,10 @@ class CarsImagesRepository implements ICarsImageRepository {
     this.repository = getRepository(CarImage);
   }
 
-  async create(car_id: string, name_image: string): Promise<CarImage> {
+  async create(car_id: string, image_name: string): Promise<CarImage> {
     const carImage = this.repository.create({
       car_id,
-      name_image,
+      image_name,
     });
 
     await this.repository.save(carImage);
